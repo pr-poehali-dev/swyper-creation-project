@@ -107,14 +107,14 @@ const ProductSwiper: React.FC = () => {
           {products.map((product) => (
             <CarouselItem
               key={product.id}
-              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/6"
             >
               <ProductCard {...product} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:flex -left-6 h-12 w-12 bg-white shadow-lg border-0 hover:bg-gray-50" />
-        <CarouselNext className="hidden md:flex -right-6 h-12 w-12 bg-white shadow-lg border-0 hover:bg-gray-50" />
+        <CarouselPrevious className="hidden md:flex left-2 h-12 w-12 bg-white shadow-lg border-0 hover:bg-gray-50 rounded-full" />
+        <CarouselNext className="hidden md:flex right-2 h-12 w-12 bg-white shadow-lg border-0 hover:bg-gray-50 rounded-full" />
       </Carousel>
     </div>
   );
