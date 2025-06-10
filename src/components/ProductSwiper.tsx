@@ -113,8 +113,8 @@ const ProductSwiper: React.FC = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="hidden md:flex -left-6" />
-        <CarouselNext className="hidden md:flex -right-6" />
+        <CarouselPrevious className="hidden md:flex -left-6 h-12 w-12 bg-white shadow-lg border-0 hover:bg-gray-50" />
+        <CarouselNext className="hidden md:flex -right-6 h-12 w-12 bg-white shadow-lg border-0 hover:bg-gray-50" />
       </Carousel>
     </div>
   );
