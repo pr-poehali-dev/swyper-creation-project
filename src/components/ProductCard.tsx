@@ -41,23 +41,23 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
       </div>
 
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-xl text-gray-900">
+            {formatPrice(price)}
+          </span>
+          {oldPrice && (
+            <span className="text-gray-500 line-through text-sm">
+              {formatPrice(oldPrice)}
+            </span>
+          )}
+        </div>
+      </div>
+
       <div className="flex-1 flex flex-col">
         <h3 className="font-montserrat font-semibold text-lg text-gray-900 mb-2 line-clamp-2">
           {name}
         </h3>
-
-        <div className="flex items-center justify-between mb-3">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-xl text-gray-900">
-              {formatPrice(price)}
-            </span>
-            {oldPrice && (
-              <span className="text-gray-500 line-through text-sm">
-                {formatPrice(oldPrice)}
-              </span>
-            )}
-          </div>
-        </div>
 
         <div className="mb-4">
           <StarRating rating={rating} />
