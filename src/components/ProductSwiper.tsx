@@ -103,7 +103,7 @@ const ProductSwiper: React.FC = () => {
         }}
         className="w-full"
       >
-        <CarouselContent className="px-6 py-8">
+        <CarouselContent className="px-8 py-10">
           {products.map((product) => (
             <CarouselItem
               key={product.id}
