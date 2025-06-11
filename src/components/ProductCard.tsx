@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 h-full flex flex-col">
+    <div className="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 p-6 h-full flex flex-col transform hover:-translate-y-1">
       <div className="relative mb-4">
         <div className="absolute top-2 left-2 z-10">
           <CategoryBadge category={category} color={categoryColor} />

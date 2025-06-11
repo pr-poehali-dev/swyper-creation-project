@@ -86,7 +86,7 @@ const ProductSwiper: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-16 pb-24">
+    <div className="container mx-auto px-4 py-16 pb-32">
       <div className="text-center mb-12">
         <h1 className="font-montserrat text-4xl font-bold text-gray-900 mb-4">
           Новинки
@@ -103,7 +103,7 @@ const ProductSwiper: React.FC = () => {
         }}
         className="w-full"
       >
-        <CarouselContent className="px-4 py-2">
+        <CarouselContent className="px-6 py-8">
           {products.map((product) => (
             <CarouselItem
               key={product.id}
