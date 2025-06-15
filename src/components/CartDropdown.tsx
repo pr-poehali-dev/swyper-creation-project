@@ -20,9 +20,12 @@ const CartDropdown = () => {
   } = useCart();
 
   return (
-    <DropdownMenu open={isCartOpen} onOpenChange={setIsCartOpen}>
+    <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="p-2 text-gray-700 hover:text-blue-600 transition-colors relative">
+        <button
+          className="p-2 text-gray-700 hover:text-blue-600 transition-colors relative"
+          onClick={() => setIsCartOpen(!isCartOpen)}
+        >
           <Icon name="ShoppingCart" className="h-5 w-5" />
           {totalItems > 0 && (
             <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
