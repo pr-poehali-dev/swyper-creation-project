@@ -1,6 +1,7 @@
 import React from "react";
 import CategoryBadge from "./CategoryBadge";
 import StarRating from "./StarRating";
+import { useCart } from "@/contexts/CartContext";
 
 interface ProductCardProps {
   id: number;
@@ -14,6 +15,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   name,
   price,
   oldPrice,
@@ -22,8 +24,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
   categoryColor,
   rating,
 }) => {
+  const { addItem } = useCart();
+
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("ru-RU").format(price) + " ₽";
+  };
+
+  const handleAddToCart = () => {
+    addItem({
+      id,
+      name,
+      price,
+      image,
+    });
   };
 
   return (
@@ -63,7 +76,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <StarRating rating={rating} />
         </div>
 
-        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200 mt-auto">
+        <button
+          onClick={handleAddToCart}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200 mt-auto"
+        >
           В корзину
         </button>
       </div>

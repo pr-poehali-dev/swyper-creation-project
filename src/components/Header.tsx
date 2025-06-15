@@ -1,7 +1,9 @@
 import React from "react";
 import Icon from "@/components/ui/icon";
+import { useCart } from "@/contexts/CartContext";
 
 const Header = () => {
+  const { totalItems } = useCart();
   return (
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,9 +48,11 @@ const Header = () => {
             </button>
             <button className="p-2 text-gray-700 hover:text-blue-600 transition-colors relative">
               <Icon name="ShoppingCart" className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </button>
           </div>
         </div>
